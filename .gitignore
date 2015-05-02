@@ -1,0 +1,10 @@
+#Version 3 
+AiyVer3/bower_components/*
+AiyVer3/config/*
+AiyVer3/dist/*
+AiyVer3/node_modules/*
+AiyVer3/tmp/*
+AiyVer3/vendor/*
+AiyVer3/public/**/*.jpg
+AiyVer3/public/**/*.png
+AiyVer3/public/**/*.JPEG

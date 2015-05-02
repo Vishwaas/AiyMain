@@ -1,0 +1,38 @@
+<header>
+	<img src="assets/Logo.png" id="logo" />
+	<div id="name">
+		Aditya Institute of Iyengar Yoga
+	</div>
+</header>
+<main>{{outlet}}</main>
+<footer>
+	<nav align="center">
+		<div class="menu-option">
+			{{menu-item 
+				menuContent=homeMenu
+				urlSelection="handleUrlSelection"
+			}}
+		</div>
+		<div class="menu-option">
+			{{menu-item 
+				menuContent=aboutMenu
+				subMenus=abousUsSubMenus
+				urlSelection="handleUrlSelection"
+			}}
+		</div>
+		<div class="menu-option">
+			{{menu-item 
+				menuContent=contactMenu
+				urlSelection="handleUrlSelection"
+			}}
+		</div>
+		<div class="menu-option">
+			{{menu-item 
+				menuContent=galleryMenu
+				subMenus=gallerySubMenus
+				urlSelection="handleUrlSelection"
+			}}
+		</div>
+	</nav>
+</footer>
+

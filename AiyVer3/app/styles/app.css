@@ -1,0 +1,178 @@
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+
+	word-wrap: break-word;
+}
+
+body {
+	background: url('BgBeachCropped.jpg') no-repeat fixed;
+	background-position: center center;
+	background-size: cover;
+	margin: 0px;
+}
+
+.italics {
+	font-style: italic;
+}
+
+header {
+	position: relative;
+	text-align: center;
+}
+
+main {
+	position: relative;
+}
+
+footer {
+	position: relative;	
+}
+
+#logo {
+	position: relative;
+	width:70px;
+	vertical-align: middle;
+}
+
+.menu-container {
+	margin: 0px 10px;
+	cursor: pointer;
+}
+
+.menu-container:first {
+	margin-left: 0px;
+}
+
+.menu-container:last {
+	margin-right: 0px;
+}
+
+.menu-option {
+	display: inline-block;
+	width:24%;
+	text-align: center;
+	vertical-align: text-top;
+}
+
+.menu-item {
+	position: relative;
+	display: inline-block;	
+	height: 136px;
+	overflow-y: hidden;
+}
+
+.main-menu {
+	position: relative;
+	margin: 0px auto;
+	top: 50%;
+}
+
+.submenu-container {
+	position: relative;	
+}
+
+.sub-menu{
+	position: relative;
+	display: inline-block;
+}
+
+.menu-round {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+
+	background-color: rgba(255, 255, 255, 0.6);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	/*background-image: url('res/home.png');*/
+
+	border-radius: 100%;	
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+}
+
+.home-text {
+	position: relative;
+	width: 60%;
+	margin: 25px auto 0px;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 10px 5px;
+}
+
+.home-text .saying {	
+	margin-bottom: 20px;
+}
+
+.form-type-element {
+	margin: 5px auto;
+}
+
+.form-type-element > div{
+	position: relative;
+	display: inline-block;
+	width: 49%;
+	vertical-align: text-top;
+	text-align: left;
+}
+
+.form-type-element .item input[type="textbox"], .form-type-element .item textarea{
+	width: 80%;
+}
+
+.form-type-element .item.btn{
+	text-align: right;
+}
+
+.form-type-element .item.btn input{
+	margin-right: 20%;
+}
+
+.form-type-element .label {
+	width: 25%;
+	margin-left: 24%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+#name {
+	position: relative;
+	display: inline-block;
+	font-size: 2em;
+	vertical-align: middle;
+}
+
+.main-content{
+	position: relative;
+	top: 0px;	
+	margin: 0px auto;
+	width: 100%;	
+}
+
+.remove {
+	display: none;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+.show {
+	display: block;
+	visibility: visible;
+}
+
+.clear-fix {
+	display: table;
+	clear: both;
+	content: '\n';
+}
