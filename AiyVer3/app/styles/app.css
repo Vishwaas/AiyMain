@@ -101,8 +101,9 @@ footer {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 50% 50%;
-	/*background-image: url('res/home.png');*/
+}
 
+.round {
 	border-radius: 100%;	
 	-webkit-border-radius: 100%;
 	-moz-border-radius: 100%;
@@ -167,6 +168,14 @@ footer {
 	top: 0px;	
 	margin: 0px auto;
 	width: 100%;	
+}
+
+.round-profile {
+	position: relative;
+	margin: auto;
+	width:150px;
+	height: 150px;
+	display: block;
 }
 
 .remove {
