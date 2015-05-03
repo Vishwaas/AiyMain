@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'delete',
+    modulePrefix: 'aiy',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
