@@ -30,21 +30,27 @@ export default Ember.Component.extend({
 		var menuHeight = this.$('.menu-container').outerHeight();		
 		var subMenuOffset = '-' + menuHeight + 'px';
 		var currentComponentIndex = Ember.$('.menu-item').index(this.$());
+		var _this = this;
 
 		this.$('.submenu-container').css('top', subMenuOffset);
 		this.set('currentComponentIndex', currentComponentIndex);
+		this.$().on('mouseenter', '.main-menu', function () {
+			_this.handleMouseEnter();
+		});
 	},
 
 	actions: {
 		menuClick: function (url) {
-			var _this = this;
-			var clickNamespace = 'click.menu-item' + this.get('currentComponentIndex');
+			/*
+				var _this = this;
+				var clickNamespace = 'click.menu-item' + this.get('currentComponentIndex');
 
-			Ember.$('body').on(clickNamespace, function () {				
-				Ember.$('body').off(clickNamespace);
-				_this.set('isSubmenuVisible', false);
-			});
-			this.set('isSubmenuVisible', true);
+				Ember.$('body').on(clickNamespace, function () {				
+					Ember.$('body').off(clickNamespace);
+					_this.set('isSubmenuVisible', false);
+				});
+				this.set('isSubmenuVisible', true);
+			*/
 
 			if(url) {
 				this.sendAction('urlSelection', url);
@@ -55,6 +61,18 @@ export default Ember.Component.extend({
 			if(url) {
 				this.sendAction('urlSelection', url);
 			}
+		}
+	},
+
+	mouseLeave: function () {
+		if (this.get('isSubmenuVisible')) {
+			this.set('isSubmenuVisible', false);
+		}
+	},
+
+	handleMouseEnter: function () {
+		if (!this.get('isSubmenuVisible')) {
+			this.set('isSubmenuVisible', true);
 		}
 	},
 
