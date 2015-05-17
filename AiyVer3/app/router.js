@@ -10,5 +10,10 @@ export default Router.map(function() {
   this.route('contact', {path: '/contact'});
   this.resource('about', function() {
     this.route('institute', {path: '/'});
+    this.route('guruji');
+  });
+  this.resource('gallery', function() {
+    this.route('photos', {path: '/'});
+    this.route('videos');
   });
 });
