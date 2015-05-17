@@ -202,9 +202,49 @@ footer {
 	display: block;
 }
 
-#main-image{
-	width: 79%;	
-	text-align: center;
+@media (orientation:landscape) {
+	#main-image{
+		width: 79%;	
+		text-align: center;
+	}
+
+	.image-container{
+		position: relative;	
+		height: 400px;	
+		display: inline-block;
+		margin-bottom: 10px; 
+	}
+
+	#scroll-images {
+		width:19%; 	
+		overflow-y:auto;
+	}
+
+	.scroll-image-holder {
+		width: 45%;		
+	}	
+}
+
+@media (orientation:portrait) {
+	#main-image{
+		height: 400px;
+		margin-bottom: 10px; 
+	}
+
+	.image-container{
+		position: relative;				
+		width: 100%;
+		display: inline-block;		
+	}
+
+	#scroll-images {
+		height: 110px;
+		overflow-y:auto;
+	}	
+
+	.scroll-image-holder {
+		width: 9%;
+	}
 }
 
 #main-image .photo{
@@ -222,25 +262,12 @@ footer {
 	height: 100%;
 }
 
-.image-container{
-	position: relative;	
-	height: 400px;	
-	display: inline-block;
-	margin-bottom: 10px; 
-}
-
-#scroll-images {
-	width:19%; 	
-	overflow-y:auto;
-}
-
 .scroll-image-holder {
 	position: relative;
 	display: inline-block;
-	width: 45%;
 	height: 50px;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	cursor: pointer;
 }
 
