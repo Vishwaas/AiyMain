@@ -1,11 +1,11 @@
 <div {{action 'menuClick' menuContent.url}} align="center" class="main-menu menu-container">
-	<div {{bind-attr style=_menuImg}} class="menu-round"></div>
+	<div {{bind-attr style=_menuImg}} class="menu-round round"></div>
 	<div>{{menuContent.label}}</div>
 </div>
 <div {{bind-attr class=":submenu-container isSubmenuVisible::remove"}}>
 	{{#each _subMenus as |subMenu|}}
 		<div {{action 'subMenuClick' subMenu.url}} {{bind-attr class=":sub-menu :menu-container"}}>
-			<div {{bind-attr style=subMenu.menuImg}} class="menu-round"></div>
+			<div {{bind-attr style=subMenu.menuImg}} class="menu-round round"></div>
 			<div>{{subMenu.label}}</div>
 		</div>
 	{{/each}}

@@ -9,9 +9,9 @@ export default Ember.Controller.extend({
 
 	galleryMenu: {'label':'Gallery', 'url':'', 'menuImg': 'assets/res/gallery.png'},
 
-	gallerySubMenus: [{'label':'Video', 'url':'gallery.video', 'menuImg':'assets/res/video.png'}, {'label':'Photo', 'url':'gallery.photo', 'menuImg':'assets/res/photo.png'}],
+	gallerySubMenus: [{'label':'Photos', 'url':'gallery.photos', 'menuImg':'assets/res/photo.png'}, {'label':'Videos', 'url':'gallery.videos', 'menuImg':'assets/res/video.png'}],
 
-	abousUsSubMenus: [{'label':'About Institute', 'url':'about.institute', 'menuImg':'assets/res/abtIns.png'}, {'label':'About Guruji', 'url':'about.guruji', 'menuImg':'assets/res/abtGuruji.png'}],
+	abousUsSubMenus: [{'label':'Institute', 'url':'about.institute', 'menuImg':'assets/res/abtIns.png'}, {'label':'Guruji', 'url':'about.guruji', 'menuImg':'assets/res/abtGuruji.png'}],
 
 	actions: {
 		handleUrlSelection: function (url) {

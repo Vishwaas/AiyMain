@@ -1,0 +1,29 @@
+<div class="home-text">	
+	{{#if arePhotosAvailable}}
+		<div id="main-image" class="image-container">
+			<!--img class="photo" {{bind-attr src=mainView}} /-->
+			<div class="bg-photo" {{bind-attr style=mainView}}></div>
+		</div>
+
+		<div id="scroll-images" class="image-container">
+			{{#if useBackgroundImage}}
+				{{#each displayPhotos as |photo|}}
+					<div class="scroll-image-holder" {{action 'selectPhoto' photo}}>					
+						<div class="bg-scroll-photo" {{bind-attr style=photo}}></div>
+					</div>
+				{{/each}}
+			{{else}}
+				{{#each displayPhotos as |photo|}}
+					<div class="scroll-image-holder" {{action 'selectPhoto' photo}}>					
+						<img class="scroll-image" {{bind-attr src=photo}} />
+					</div>
+				{{/each}}
+			{{/if}}
+				
+		</div>
+	{{else}}
+		<div class="text-center">	
+			The photos for this site is not yet published. Once published will be made available.
+		</div>
+	{{/if}}
+</div>
