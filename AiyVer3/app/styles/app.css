@@ -13,9 +13,17 @@ body {
 	background: url('BgBeach.jpg') no-repeat fixed;
 	background-position: center center;
 	background-size: cover;
-	margin: 0px;
-	min-width: 630px;
+	margin: 0px;	
+	min-width: 630px;	
 }
+
+/*@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px){ 
+  	body {
+  		min-width: 630px;	
+  	}  	
+}*/
 
 .italics {
 	font-style: italic;
@@ -227,7 +235,7 @@ footer {
 
 @media (orientation:portrait) {
 	#main-image{
-		height: 400px;
+		height: 200px;
 		margin-bottom: 10px; 
 	}
 
