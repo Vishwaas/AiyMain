@@ -14,7 +14,7 @@ body {
 	background-position: center center;
 	background-size: cover;
 	margin: 0px;	
-	min-width: 630px;	
+	min-width: 410px;	
 }
 
 /*@media screen 
@@ -125,6 +125,36 @@ footer {
 	-o-border-radius: 100%;
 }
 
+@media (max-width: 630px) {
+	.menu-round {		
+		width: 35px;
+		height: 35px;
+	}	
+
+	.menu-item {
+		height: 100px;
+	}
+
+	.menu-item * {
+		font-size: 0.8em;
+	}
+}
+
+@media (max-width: 490px) {
+	.menu-round {		
+		width: 25px;
+		height: 25px;
+	}	
+
+	.menu-item {
+		height: 75px;
+	}
+
+	.menu-item * {
+		font-size: 0.7em;
+	}
+}
+
 .home-text {
 	position: relative;
 	width: 70%;
@@ -194,6 +224,27 @@ footer {
 	font-family: 'Playfair Display', serif;
 	color: #8A1E20;
 }
+
+@media (max-width: 560px) {
+	#name {
+		font-size: 1.5em;
+	}
+
+	#logo {
+		width: 60px;
+	}
+}
+
+@media (max-width: 440px) {
+	#name {
+		font-size: 1.2em;
+	}
+
+	#logo {
+		width: 50px;
+	}
+}
+
 
 .main-content{
 	position: relative;

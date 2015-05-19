@@ -26,17 +26,27 @@ export default Ember.Component.extend({
 		return k;
 	}.property('subMenus.[]'),
 
-	didInsertElement: function () {
-		var menuHeight = this.$('.menu-container').outerHeight();		
-		var subMenuOffset = '-' + menuHeight + 'px';
+	didInsertElement: function () {		
 		var currentComponentIndex = Ember.$('.menu-item').index(this.$());
 		var _this = this;
+		
+		this.adjustSubMenuOffset();
 
-		this.$('.submenu-container').css('top', subMenuOffset);
+		Ember.$(window).on('resize', function () {
+			_this.adjustSubMenuOffset();
+		});
+		
 		this.set('currentComponentIndex', currentComponentIndex);
 		this.$().on('mouseenter', '.main-menu', function () {
 			_this.handleMouseEnter();
 		});
+	},
+
+	adjustSubMenuOffset: function () {
+		var menuHeight = this.$('.menu-container').outerHeight();		
+		var subMenuOffset = '-' + menuHeight + 'px';
+
+		this.$('.submenu-container').css('top', subMenuOffset);
 	},
 
 	actions: {
