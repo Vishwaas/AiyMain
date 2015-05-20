@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Get Facebook Page Information</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+function resultCall(data)
+{	
+	alert("Result obtain: \n"+JSON.stringify(data));
+}
+var accessToken = "";
+function getPageInfo()
+{
+	var pageName = document.getElementById("pageName").value;
+	accessToken = "354644071343397|64RiBqGLaiPn1VMS3E-ckNRnOAM";
+	/*Wether the above app token is used or the access token is used the same error is encountered. However it works fine in graph explorer. The reason is it is deprecated as mention in the readme	
+	*/
+	var queryString = "https://graph.facebook.com/search?q="+pageName+"&type=page&access-token="+encodeURIComponent(accessToken)+"&callback=resultCall";	
+	var scriptTagEle = document.createElement("script")
+	scriptTagEle.type="text/javascript";
+		//alert(queryString);
+	scriptTagEle.src = queryString;
+	
+	document.getElementById("mainCont").appendChild(scriptTagEle);
+	
+}
+</script>
+<style type="text/css">
+body *
+{
+	font-family: 'Roboto Condensed', sans-serif;
+	color:rgb(50, 50, 50); 
+	line-height:1.5em;
+	font-size:1.05em;
+} 
+
+#bgCont
+{
+	position:fixed;
+	z-index:-2000;
+	width:110%;
+	height:2000px;
+	left:-5%;
+	top:-5%;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	background-image:-webkit-linear-gradient(top,rgba(69,97,157,0.8) 0%,rgba(99,127,187,0.8) 100%);
+	background-image:-moz-linear-gradient(top,rgba(69,97,157,0.8) 0%,rgba(99,127,187,0.8) 100%);
+	background-image:-ms-linear-gradient(top,rgba(69,97,157,0.8) 0%,rgba(99,127,187,0.8) 100%);
+	background-image:-o-linear-gradient(top,rgba(69,97,157,0.8) 0%,rgba(99,127,187,0.8) 100%);
+	background-image:linear-gradient(top,rgba(69,97,157,0.8) 0%,rgba(99,127,187,0.8) 100%);
+}
+
+#mainCont
+{
+	position:absolute;
+	border:0px solid rgb(50,50,200);
+	width:40%;
+	left:30%;
+	top:200px;
+	padding:20px;
+	
+	background-color:rgba(220,220,220,0.4);
+	
+	-webkit-box-shadow:inset 1px 1px 2px 2px rgba(39,67,97,0.8), inset -1px -1px 2px 2px rgba(39,67,97,0.8);
+	-moz-box-shadow:inset 1px 1px 2px 2px rgba(39,67,97,0.8), inset -1px -1px 2px 2px rgba(39,67,97,0.8);
+	-ms-box-shadow:inset 1px 1px 2px 2px rgba(39,67,97,0.8), inset -1px -1px 2px 2px rgba(39,67,97,0.8);
+	-o-box-shadow:inset 1px 1px 2px 2px rgba(39,67,97,0.8), inset -1px -1px 2px 2px rgba(39,67,97,0.8);
+	box-shadow:inset 1px 1px 2px 2px rgba(39,67,97,0.8), inset -1px -1px 2px 2px rgba(39,67,97,0.8);
+	
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	-ms-border-radius:7px;
+	-o-border-radius:7px;
+	border-radius:7px;
+}
+
+.beLeft
+{
+	float:left;
+}
+.beRight
+{
+	float:right;
+}
+
+.beInline
+{
+	display:inline-block;
+	width:48%;
+	border:0px solid black;
+}
+</style>
+</head>
+
+<body>
+<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '354644071343397',
+		  channelUrl : 'http://www.adityaiyengaryoga.com/projectPlace/authenticatedAccessToken/FacebookPageInformationWithAuth.php',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+	<div id="bgCont"></div>
+	
+	<div id="mainCont">
+    	<div class="beInline" >Enter the page you want to search:</div> 
+		<input id="pageName" class="beInline" list="pageList" value="" />
+		<datalist id="pageList">
+			<option value="Restaurant">
+			<option value="Bar">
+			<option value="Cafe">
+			<option value="Landmark">
+			<option value="Theatre">
+			<option value="Hotel">
+			<option value="Museum">
+			<option value="Park">
+			<option value="Shopping mall">
+			<option value="Book store">
+			<option value="Gym">
+			<option value="Super market ">
+			<option value="Hair stylist">
+			<option value="School">
+		</datalist>
+	
+		<br/><br/>
+        <div class="beInline" id="status" style="text-decoration:underline;"></div> 
+		<div class="beInline"><input onclick="getPageInfo()" id="getPageInfo" style="width:30%;position:relative;left:70%;" type="button" value="Search" /></div>
+		
+        <br/><br/>
+		
+		<!-- InfoCont contains information to be shown -->
+		<div id="infoCont" style="display:none;">				
+			
+		</div>
+     </div>
+</body>
+</html>

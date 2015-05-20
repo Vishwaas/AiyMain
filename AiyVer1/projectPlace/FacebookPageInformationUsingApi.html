@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Facebook Page Information</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='mainStyle.css' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="mainJs.js"></script>
+</head>
+
+<body onload="load()">
+<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '354644071343397',
+		  channelUrl : 'http://www.adityaiyengaryoga.com/projectPlace/FacebookPageInformation.php',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+	<div id="bgCont">
+	<script	type="text/javascript">
+		setHeight("bgCont",105);
+		setWidth("bgCont",105);
+	</script>
+	</div>
+	
+	<div id="mainCont">
+	<script	type="text/javascript">
+		setHeight("mainCont",100);
+		setWidth("mainCont",100);
+	</script>
+		<div id="headerStrip">
+		<script	type="text/javascript">
+			setHeight("headerStrip",20);			
+		</script>
+			<h1>
+				Facebook Page Information
+			</h1>
+		</div>
+		<div id="mainSection">		
+			<br/><br/>
+			<div class="beInline" >Enter the page you want to search:</div> 
+			<input id="pageName" class="beInline" list="pageList" value="" />
+			<datalist id="pageList">
+				<option value="Subway">
+				<option value="Coffee Day">
+				<option value="Manhattan">	
+				<option value="Coco Cola">
+				<option value="Miami Heat">				
+				<option value="Baby Oye">
+				<option value="Amazon">
+				<option value="Taj West End">
+				<option value="Star Home Cinema">				
+				<option value="Fun Cinemas">
+				<option value="Amazon">
+			</datalist>
+		<br/><br/>
+			<div class="beInline" id="status" style="text-decoration:underline;"></div> 
+			<div class="beInline" align="right">
+				<div onclick="search(this)" id="getPageInfo" class="defBut">Search</div>				
+			</div>
+			
+			<br/><br/>
+			
+			<!-- InfoCont contains information to be shown -->
+			<div id="infoCont" align="center">	
+				<div onclick="addToFav()" data-name="" data-curState = "0" class="inlineEle" id="favIcon"></div>
+				<div class="inlineELe" id="infoTableCaption"></div>
+				<hr>
+				<table id="infoTable" border="1" cellspacing = "0" style="width:90%;position:relative;border-type:solid;">
+					
+				</table>
+			</div>
+		</div>
+		<div id="favSection" align="center">
+		<script	type="text/javascript">
+			var facSecStyleptr = document.getElementById("favSection").style;
+			facSecStyleptr.minHeight = screenComparePercentHeight(80)+"px";			
+			facSecStyleptr.top = screenComparePercentHeight(20)+"px";		
+		</script>
+				Favourite List
+				<hr>
+			<div id="favSectionWrapper" align="center">
+				
+			</div>
+		</div>
+     </div>
+</body>
+</html>
