@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Env from 'aiy/config/environment';
 
 export default Ember.Route.extend({
 	getBgImg: function (imgUrl) {
@@ -6,13 +7,11 @@ export default Ember.Route.extend({
 	},
 
 	model: function () {
-		var _this = this;
-
-		//'url':'/api/aiy/photolist' for local development
-		//'url':'api/aiy/photolist.php for production
+		var _this = this;		
+		
 		return Ember.$.ajax({
 			'method':'GET',
-			'url':'api/aiy/photolist.php'}).then(
+			'url':Env.APP.photosHost}).then(
 			function(data){				
 				data = (typeof data === 'string' || data instanceof String) ? JSON.parse(data) : data;
 
